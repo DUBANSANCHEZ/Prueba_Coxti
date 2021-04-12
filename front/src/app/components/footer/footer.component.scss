@@ -1,0 +1,12 @@
+footer{
+    background-color:#192c41;
+    padding: 15px;
+    color: white;
+    font-size: 15px;
+    font-family: "Roboto Condensed", sans-serif ;
+    text-align: center;
+    line-height: 3px;
+    @media (min-width: 768px) {
+        width:100%;
+    }
+}

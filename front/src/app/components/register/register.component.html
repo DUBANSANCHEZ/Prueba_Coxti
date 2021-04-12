@@ -1,0 +1,198 @@
+<body class="Imag1">
+    <img class="Imag1" src="../../../assets/1609698656834 (1).jpg" alt="Imag1">     
+    <div class="container separador">
+        <form [formGroup]="registerForm" novalidate>
+            <label for="ejemplo">DATOS PERSONALES</label>
+            <div class="form-label-group">   
+              <label for="ejemplo">Nombre*</label>
+              <input  type="text" class="form-control" name="Nombre" placeholder="Ingrese su Nombre" autofocus required formControlName="Nombre">
+              <div *ngIf="registerForm.get('Nombre').errors" class="alert alert-danger">
+                  <div *ngIf="registerForm.get('Nombre').errors['required']">
+                    Nombre requerido
+                  </div>
+                  <div *ngIf="registerForm.get('Nombre').errors['pattern']">
+                    Nombre incorrecto
+                  </div>
+              </div>
+            </div> 
+            <div class="form-label-group">
+              <label for="ejemplo">Apellido*</label>
+              <input  type="text" class="form-control" name="Apellido" placeholder="Ingrese su Apellido" required formControlName="Apellido">
+              <div *ngIf="registerForm.get('Apellido').errors" class="alert alert-danger">
+                  <div *ngIf="registerForm.get('Apellido').errors['required']">
+                    Apellido requerido
+                  </div>
+                  <div *ngIf="registerForm.get('Apellido').errors['pattern']">
+                    Apellido incorrecto
+                  </div>
+              </div>
+            </div> 
+            <div class="form-label-group">
+                <label for="ejemplo">Cedula*</label>
+                <input  type="text" class="form-control" name="Cedula" placeholder="Ingrese su Cedula" required formControlName="Cedula">
+                <div *ngIf="registerForm.get('Cedula').errors" class="alert alert-danger">
+                    <div *ngIf="registerForm.get('Cedula').errors['required']">
+                        Cedula requerida
+                    </div>
+                    <div *ngIf="registerForm.get('Cedula').errors['pattern']">
+                        Cedula requerida
+                    </div>
+                    <div *ngIf="registerForm.get('Cedula').errors['min'] && !registerForm.get('Cedula').errors['pattern']">
+                        Cedula incorrecto
+                      </div>
+                    <div *ngIf="registerForm.get('Cedula').errors['max'] && !registerForm.get('Cedula').errors['pattern']">
+                        Cedula incorrecto
+                    </div>
+                </div>
+            </div>    
+            <div class="form-label-group">
+                <label for="ejemplo">Celular*</label>
+                <input  type="text" class="form-control" name="Celular" placeholder="Ingrese su Celular" required formControlName="Celular">
+                <div *ngIf="registerForm.get('Celular').errors" class="alert alert-danger">
+                    <div *ngIf="registerForm.get('Celular').errors['required']">
+                        Celular requerido
+                      </div>
+                      <div *ngIf="registerForm.get('Celular').errors['pattern']">
+                        Celular incorrecto
+                      </div>
+                      <div *ngIf="registerForm.get('Celular').errors['min'] && !registerForm.get('Celular').errors['pattern']">
+                        Celular incorrecto
+                      </div>
+                      <div *ngIf="registerForm.get('Celular').errors['max'] && !registerForm.get('Celular').errors['pattern']">
+                        Celular incorrecto
+                      </div>
+                </div>
+              </div> 
+            <div class="form-label-group">
+              <label for="ejemplo">Correo*</label>
+              <input type="email" class="form-control" name="Correo" placeholder="Ingrese su Correo" required formControlName="Correo">
+              <div *ngIf="registerForm.get('Correo').errors" class="alert alert-danger">
+                <div *ngIf="registerForm.get('Correo').errors['required']">
+                  Email requerido
+                </div>
+                <div *ngIf="registerForm.get('Correo').errors['pattern']">
+                  Email incorrecto
+                </div>
+              </div>
+            </div>               
+            <div *ngIf="!login" class="form-label-group">
+                <label for="ejemplo">Contraseña*</label>
+                <input type="Password" class= "form-control" name="Password" placeholder="Ingrese su Contraseña" formControlName= "Password">
+                <div *ngIf="registerForm.get('Password').errors" class="alert alert-danger">
+                    <div *ngIf="registerForm.get('Password').errors['required']">
+                      Contraseña requerida
+                    </div>
+                    <div *ngIf="registerForm.get('Password').errors['minlength']">
+                      Contraseña insegura minimo 6 caracteres
+                    </div>
+                </div>              
+            </div>
+            <label for="ejemplo">DATOS DE RESIDENCIA</label>
+            <div class="form-label-group">   
+              <label for="ejemplo">Departamento*</label>
+              <input  type="text" class="form-control" name="Departamento" placeholder="Ingrese su Departamento" required formControlName="Departamento">
+              <div *ngIf="registerForm.get('Departamento').errors" class="alert alert-danger">
+                  <div *ngIf="registerForm.get('Departamento').errors['required']">
+                    Departamento requerido
+                  </div>
+                  <div *ngIf="registerForm.get('Departamento').errors['pattern']">
+                    Departamento incorrecto
+                  </div>
+              </div>
+            </div>   
+            <div class="form-label-group">   
+                <label for="ejemplo">Ciudad*</label>
+                <input  type="text" class="form-control" name="Ciudad" placeholder="Ingrese su Ciudad" required formControlName="Ciudad">
+                <div *ngIf="registerForm.get('Ciudad').errors" class="alert alert-danger">
+                    <div *ngIf="registerForm.get('Ciudad').errors['required']">
+                        Ciudad requerido
+                    </div>
+                    <div *ngIf="registerForm.get('Ciudad').errors['pattern']">
+                        Ciudad incorrecto
+                    </div>
+                </div>
+            </div>   
+            <div class="form-label-group">   
+                <label for="ejemplo">Barrio*</label>
+                <input  type="text" class="form-control" name="Barrio" placeholder="Ingrese su Barrio" required formControlName="Barrio">
+                <div *ngIf="registerForm.get('Barrio').errors" class="alert alert-danger">
+                    <div *ngIf="registerForm.get('Barrio').errors['required']">
+                        Barrio requerido
+                    </div>
+                    <div *ngIf="registerForm.get('Barrio').errors['pattern']">
+                        Barrio incorrecto
+                    </div>
+                </div>
+            </div>
+            <div class="form-label-group">   
+                <label for="ejemplo">Direccion de residencia*</label>
+                <input  type="text" class="form-control" name="Direccion" placeholder="Ingrese su Direccion" required formControlName="Direccion">
+                <div *ngIf="registerForm.get('Direccion').errors" class="alert alert-danger">
+                    <div *ngIf="registerForm.get('Direccion').errors['required']">
+                        Direccion requerido
+                    </div>
+                    <div *ngIf="registerForm.get('Direccion').errors['pattern']">
+                        Direccion incorrecto
+                    </div>
+                </div>
+            </div>   
+            <label for="ejemplo">DATOS FINANCIEROS</label>
+            <div class="form-label-group">   
+              <label for="ejemplo">Salario*</label>
+              <input  type="text" class="form-control" name="Salario" placeholder="Ingrese su Salario" required formControlName="Salario">
+              <div *ngIf="registerForm.get('Salario').errors" class="alert alert-danger">
+                  <div *ngIf="registerForm.get('Salario').errors['required']">
+                    Salario requerido
+                  </div>
+                  <div *ngIf="registerForm.get('Salario').errors['pattern']">
+                    Salario incorrecto
+                  </div>
+              </div>
+            </div>   
+            <div class="form-label-group">   
+                <label for="ejemplo">Otros ingresos*</label>
+                <br>
+                <label for="ejemplo">En canso de no tener añadir NA</label>
+                <input  type="text" class="form-control" name="otros_Ingresos" placeholder="Ingrese su otros ingresos" required formControlName="otros_Ingresos">
+                <div *ngIf="registerForm.get('otros_Ingresos').errors" class="alert alert-danger">
+                    <div *ngIf="registerForm.get('otros_Ingresos').errors['required']">
+                        Otros ingresos requeridos
+                    </div>
+                    <div *ngIf="registerForm.get('otros_Ingresos').errors['pattern']">
+                        Otros ingresos incorrecto
+                    </div>
+                </div>
+            </div>   
+            <div class="form-label-group">   
+                <label for="ejemplo">Gastos Mensuales*</label>
+                <input  type="text" class="form-control" name="Gastos_mensuales" placeholder="Ingrese sus gastos Mensuales" required formControlName="Gastos_mensuales">
+                <div *ngIf="registerForm.get('Gastos_mensuales').errors" class="alert alert-danger">
+                    <div *ngIf="registerForm.get('Gastos_mensuales').errors['required']">
+                        Gastos mensuales requeridos
+                    </div>
+                    <div *ngIf="registerForm.get('Gastos_mensuales').errors['pattern']">
+                        Gastos mensuales incorrectos
+                    </div>
+                </div>
+            </div>
+            <div class="form-label-group">   
+                <label for="ejemplo">Gastos Financieros*</label>
+                <input  type="text" class="form-control" name="Gastos_Financieros" placeholder="Ingrese sus gastos Financieros" required formControlName="Gastos_Financieros">
+                <div *ngIf="registerForm.get('Gastos_Financieros').errors" class="alert alert-danger">
+                    <div *ngIf="registerForm.get('Gastos_Financieros').errors['required']">
+                        Gastos financieros requeridos
+                    </div>
+                    <div *ngIf="registerForm.get('Gastos_Financieros').errors['pattern']">
+                        Gastos financieros incorrectos
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="form-label-group">
+            <div *ngIf="!login">
+                <button  [disabled]="!registerForm.valid" class="btn btn-block" id="btnRegister" (click)="addRegister(registerForm)"
+                type="button">Registrar</button>
+            </div>              
+        </div>
+    </div>
+</body>
