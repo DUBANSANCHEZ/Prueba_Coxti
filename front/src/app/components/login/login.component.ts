@@ -59,6 +59,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('usuario', data['token']);      
           this.tokenPayload = decode(data['token']); 
           this.router.navigate(['register']);
+          this.loginService.valueSesion = true;
         } 
       });
     }

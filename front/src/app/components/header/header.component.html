@@ -3,9 +3,9 @@
         <nav class="nav-main">
             <img src="../../../assets/coxti.png" alt="TechNews Logo" class="nav-brand">
             <ul class= "nav-menu">            
-                <li *ngIf="(!isRegister && !isLogout)"><a href="#" routerLink="/register">Registro</a></li>
-                <li *ngIf="(!isLogin && !isLogout)"><a href="#" routerLink="/login">Login</a></li>
-                <li *ngIf="isLogout"><a routerLink><i class="fa fa-power-off"></i> Cerrar sesion</a></li>
+                <li *ngIf="(!isRegister && !loginService.valueSesion)"><a href="#" routerLink="/register">Registro</a></li>
+                <li *ngIf="(!isLogin && !loginService.valueSesion)"><a href="#" routerLink="/login">Login</a></li>
+                <li *ngIf="loginService.valueSesion"><a (click)='logout()' routerLink><i class="fa fa-power-off"></i> Logout</a></li>
             </ul>
         </nav>
     </div>

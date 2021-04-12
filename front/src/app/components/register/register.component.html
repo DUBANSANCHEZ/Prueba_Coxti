@@ -1,5 +1,6 @@
 <body class="Imag1">
-    <img class="Imag1" src="../../../assets/1609698656834 (1).jpg" alt="Imag1">     
+    <img class="Imag1" src="../../../assets/1609698656834 (1).jpg" alt="Imag1">   
+    <div *ngIf="loginService.valueSesion"><button (click)="consultaSalario()">Consultar Salario</button></div>
     <div class="container separador">
         <form [formGroup]="registerForm" novalidate>
             <label for="ejemplo">DATOS PERSONALES</label>

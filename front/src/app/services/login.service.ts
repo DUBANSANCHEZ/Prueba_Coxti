@@ -7,6 +7,7 @@ import { login } from '../models/login';
 })
 export class LoginService {
 
+  valueSesion : boolean;
   API_URL = 'http://localhost:3000/api';
   constructor(private http: HttpClient) {}
 

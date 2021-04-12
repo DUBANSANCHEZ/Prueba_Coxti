@@ -1,12 +1,8 @@
 var express = require('express');
 var db = require('../database');
 var bcrypt = require('bcryptjs');
-var keygen = require("keygenerator");
 var config = require('../models/config');
 var jwt = require('jsonwebtoken');
-const login = require('../libs/login');
-const nodemailer = require('nodemailer');
-var smtpTransport = require('nodemailer-smtp-transport');
 
 const loginCtrl = {};
 

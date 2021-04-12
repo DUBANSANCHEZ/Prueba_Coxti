@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RegisterService } from '../../services/register.service';
+import { LoginService } from '../../services/login.service';
+import { RangeofValuesService } from '../../services/rangeof-values.service';
 import { Personas } from '../../models/persona';
 import decode from 'jwt-decode';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
@@ -34,7 +36,7 @@ export class RegisterComponent implements OnInit {
     GASTOS_FINANCIEROS : 0,
   }
   registerForm: FormGroup;  
-  constructor(public registerService: RegisterService, private router: Router, private fb: FormBuilder) {
+  constructor(public registerService: RegisterService, public loginService: LoginService, public rangeofValuesService: RangeofValuesService, private router: Router, private fb: FormBuilder) {
     this.buildForm();
   }
   buildForm(){
@@ -124,5 +126,10 @@ export class RegisterComponent implements OnInit {
       }
     })
   } 
-
+  consultaSalario(){
+    this.rangeofValuesService.getSalario(this.PERSONAS.SALARIO)
+    .subscribe (res => {
+      console.log(res);
+    })
+  }
 }

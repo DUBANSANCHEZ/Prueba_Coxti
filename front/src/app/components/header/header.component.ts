@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   isLogin: boolean;
   isRegister: boolean;
   isLogout = false;
-  constructor(private loginService: LoginService, private router: Router) { 
+  constructor(public loginService: LoginService, private router: Router) { 
     this.routeEvent(this.router);
   }
   routeEvent(router: Router){
@@ -23,10 +23,12 @@ export class HeaderComponent implements OnInit {
         this.isLogin = e.url === '/login';
         this.isRegister = e.url === '/register';
       }
-    });
+    }); 
   }
   ngOnInit(): void {
-    if(localStorage.getItem('usuario') != 'null')  this.isLogout = true;
-  }
 
+  }
+  logout(){
+    this.loginService.valueSesion = false;
+  }
 }
